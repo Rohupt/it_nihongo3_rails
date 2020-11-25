@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'ホーム', root_path, method: :get %>
+<% if user_signed_in? %>
+<%= current_user.email %>
+<%= link_to "ログアウト", destroy_user_session_path, method:"delete" %>
+<% else %>
+<%= link_to "ログイン", new_user_session_path, method:"get" %>
+<%= link_to "ユーザー登録", new_user_registration_path, method:"get" %>
+<% end %>
+<hr>
 
 <h1>Books</h1>
 
@@ -16,8 +25,8 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.number_of_pages %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Show', book, method: :get %></td>
+        <td><%= link_to 'Edit', edit_book_path(book), method: :get %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'New Book', new_book_path, method: :get %>
