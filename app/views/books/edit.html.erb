@@ -13,3 +13,8 @@
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>
+<p>
+    <% if @book.image.attached? %>
+      <%= image_tag @book.image %>
+    <% end %>
+</p>
