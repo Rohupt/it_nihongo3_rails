@@ -7,14 +7,9 @@
 <%= link_to "ユーザー登録", new_user_registration_path, method:"get" %>
 <% end %>
 <hr>
-<h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+<h1>プロフィール</h1>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
-<p>
-    <% if @book.image.attached? %>
-      <%= image_tag @book.image %>
-    <% end %>
-</p>
+<h3>メールアドレス</h3>
+
+<%= @user.email %>
