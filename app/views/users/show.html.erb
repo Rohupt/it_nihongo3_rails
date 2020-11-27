@@ -2,7 +2,7 @@
 
 <p>
     <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar %>
+      <%= image_tag @user.avatar, style: 'max-height:300px;max-width:300px;' %>
     <% end %>
 </p>
 
