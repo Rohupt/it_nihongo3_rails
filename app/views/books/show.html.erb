@@ -19,6 +19,11 @@
   <%= @book.number_of_pages %>
 </p>
 
+<p>
+  <strong>Detail:</strong>
+  <%= @book.detail %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book), method: :get %> |
 <%= link_to 'Back', books_path, method: :get %>
 <p>
