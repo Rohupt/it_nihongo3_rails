@@ -1,13 +1,3 @@
-<%= link_to 'ホーム', root_path, method: :get %>
-<% if user_signed_in? %>
-<%= link_to current_user.email, users_show_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method:"delete" %>
-<% else %>
-<%= link_to "ログイン", new_user_session_path, method:"get" %>
-<%= link_to "ユーザー登録", new_user_registration_path, method:"get" %>
-<% end %>
-<hr>
-
 <h1>プロフィール</h1>
 
 <p>
